@@ -1,23 +1,24 @@
-# [Project Name] 🎯
+# Blood Donation System🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Techzz
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1:  Safa Noufal-Carmel Polytechnic College Alappuzha
+- Member 2:  Annmary Nelson-Carmel Polytechnic College Alappuzha
+- Member 3:  Gowri Nandana B-Carmel Polytechnic College Alappuzha
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
+
 ### Project Description
-[2-3 lines about what your project does]
+A web based platform that connects blood donors and recipients efficiently .It allows users to register as donors ,search for donors based on blood group and location,and manage donation records securely. 
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Finding blood donors in emergencies in often difficult and time-consuming.There is no centralized system to quickly connect donors with recipients based on location and blood group
 
 ### The Solution
 [How are you solving it? Keep it fun!]
