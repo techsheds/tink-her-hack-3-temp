@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Donor Registration</title>
+ {% load static %}
+ <link rel="stylesheet" href="{% static 'style.css' %}">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+</head>
+<body>
+ <div class="container mt-5">
+ <h2 class="text-center text-danger">Donor Registration Form</h2> 
+ <form  action="{% url 'donate_view' %}" method="POST" >
+    {% csrf_token %}
+ <div class="mb-3">
+ <label class="form-label">Full Name</label>
+ <input type="text" class="form-control" name="name" required>
+ </div>
+ <div class="mb-3">
+ <label class="form-label">Age</label>
+ <input type="number" class="form-control" name="age" required>
+ </div>
+ <div class="mb-3">
+ <label class="form-label">Blood Group</label>
+ <select class="form-control" name="blood_group">
+ <option>A+</option>
+ <option>A-</option>
+ <option>B+</option>
+ <option>B-</option>
+ <option>O+</option>
+ <option>O-</option>
+ <option>AB+</option>
+ <option>AB-</option>
+ </select>
+ </div>
+ <div class="mb-3">
+ <label class="form-label">Contact Number</label>
+ <input type="text" class="form-control" name="contact" required>
+ </div>
+ <div class="mb-3">
+ <label class="form-label">City</label>
+ <input type="text" class="form-control" name="city" required>
+ </div>
+ <button type="submit">Submit</button>
+ </form>
+ <div>
+ <p><a href="{%url 'home'%}">Back to Home</a></p>
+ </div>
+</body>
+</html>

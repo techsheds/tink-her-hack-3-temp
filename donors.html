@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Registered Donors</title>
+ {% load static %}
+ <link rel="stylesheet" href="{% static 'style.css' %}">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+</head>
+<body>
+ <div class="container mt-5">
+ <h2 class="text-center text-danger">Registered Donors</h2>
+ <table class="table table-bordered">
+ <tr>
+ <th>Name</th>
+ <th>Age</th>
+ <th>Blood Group</th>
+ <th>Contact</th>
+ <th>City</th>
+ </tr>
+ {% for donor in donors %}
+ <tr>
+ <td>{{ donor.name }}</td>
+ <td>{{ donor.age }}</td>
+ <td>{{ donor.blood_group }}</td>
+ <td>{{ donor.contact }}</td>
+ <td>{{ donor.city }}</td>
+ </tr>
+ {% empty %}
+ <tr>
+ <td colspan="5" class="text-center">No donors registered yet.</td>
+ </tr>
+ {% endfor %}
+ </table>
+ </div>
+ <form method="GET">
+    <label for="blood_group">Blood Group:</label>
+    <select name="blood_group" id="blood_group">
+    <option value="">All</option>
+    <option value="A+" {% if blood_group == "A+" %}selected{% endif %}>A+</option>
+    <option value="A-" {% if blood_group == "A-" %}selected{% endif %}>A-</option>
+    <option value="B+" {% if blood_group == "B+" %}selected{% endif %}>B+</option>
+    <option value="B-" {% if blood_group == "B-" %}selected{% endif %}>B-</option>
+    <option value="O+" {% if blood_group == "O+" %}selected{% endif %}>O+</option>
+    <option value="O-" {% if blood_group == "O-" %}selected{% endif %}>O-</option>
+    <option value="AB+" {% if blood_group == "AB+" %}selected{% endif %}>AB+</option>
+    <option value="AB-" {% if blood_group == "AB-" %}selected{% endif %}>AB-</option>
+    </select>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" placeholder="Enter city" value="{{ city }}">
+    <button type="submit">Filter</button>
+   </form>
+   <h3>Donor List:</h3>
+   {% for donor in donors %}
+    <p>{{ donor.name }} - {{ donor.blood_group }} - {{ donor.city }}</p>
+   {% empty %}
+    <p>No donors found.</p>
+   {% endfor %}
+</body>
+</html>
